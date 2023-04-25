@@ -7,34 +7,46 @@ Some intro
 
 ### A. Create a public/private key
 
-Open the PowerShell, cd to the location where you want to store the Key: 
+- Open the PowerShell
+- cd to the location where you want to store the keys 
+- Execute the following command
 
+```bash
 ssh-keygen -t rsa -f [KEY_FILENAME] -C [USERNAME]
-ssh-keygen -t rsa -f test_key -C test-user
-
+```
 
 ### B. Create a VM in GCP
 
+Manually create a virtual machine. Make sure to:
+
+- Add your public key to the security information of the VM
+- Allow HTTP and HTTPS 
+- Unclik the special GCP security options
+
 ### C. Connect to the VM via the terminal
 
-ssh -i [PATH-TO-PRIVATE-KEY] [USERNAME]@[VM-IP-ADDRESS]
-ssh -i C:\\Users\\yabra\\.ssh\\test_key test-user@34.171.141.200
-ssh -i test_key test-user@34.30.159.216
+- Locate the IP address of your VM (e.g. 34.30.159.216)
+- cd to the folder with your private key
+- Run the following command
 
+```bash
+ssh -i [PATH-TO-PRIVATE-KEY] [USERNAME]@[VM-IP-ADDRESS]
+```
 
 ### D. Connect to the VM through VSCode
 
-1. Download the remote explore extension
+1. Download the *Remote Explorer* extension
 
-2. Edit the config file to add the information of the VM and the keys
+2. Edit the config file to add the information of the VM and the keys. Add the following block to the file:
 
-        ```yaml
-        Host 34.30.159.216
-            IdentityFile C:\Users\yabra\.ssh\test_key
-            User test-user
-            IdentitiesOnly=yes
-            CheckHostIP=no
-        ```
+    ```python
+    Host [VM-IP-ADDRESS]
+        IdentityFile [FULL-PATH-TO-PRIVATE-KEY]
+        #IdentityFile C:\Users\yabra\.ssh\test_key
+        User [USERNAME]
+        IdentitiesOnly=yes
+        CheckHostIP=no
+    ```
 
 3. Connect by clicking on the IP address of the VM
 
@@ -47,6 +59,14 @@ ssh -i test_key test-user@34.30.159.216
 - Extensions
 
 ### B. Linux installations
+
+Basic linux commands
+
+- Change Directory (cd)
+- List (ls)
+- sudo apt install
+
+Basic installations
 
 ```bash
 sudo apt-get update 
@@ -64,7 +84,8 @@ sudo python3 get-pip.py
 
 ## Code Management
 
-
+- Drag and drop code
+- Clone github repository
 
 ## Data Management
 
@@ -93,12 +114,29 @@ Winscp (horrible)
 - Copy from bucket
 - Mount the bucket
 
-
-
 ## Code Demonstration
 
 
-### SSH Resources
+### A. Install extensions
+
+- Python
+- Accept the installation of the ipykernel package
+
+
+### B. Install Python libraries
+
+```bash
+pip install pandas scikit-learn transformers datasets
+```
+
+### B. Running Python interactively
+
+
+-------
+
+## External resources
+
+### Key generation and SSH 
 
 - https://www.ssh.com/academy/ssh/keygen
 - https://support.stackpath.com/hc/en-us/articles/360025597511-Generate-and-Add-SSH-Keys-for-a-Virtual-Machine
