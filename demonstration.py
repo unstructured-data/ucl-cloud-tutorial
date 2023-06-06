@@ -5,8 +5,12 @@ from sklearn.ensemble import RandomForestClassifier
 
 #%%
 
+# set path to data
+
+path_to_data = "../"
+
 # read document-term matrix
-dt = pd.read_csv("dt.csv")
+dt = pd.read_csv(path_to_data + "dt.csv")
 
 # rename first column (contains the cik code)
 dt.rename(columns={"Unnamed: 0": "cik"}, inplace=True)
@@ -29,7 +33,7 @@ dt.shape
 #%%
 
 # read the covariates data for the cik codes
-df_cov = pd.read_csv("cik_covariates.csv")
+df_cov = pd.read_csv(path_to_data + "cik_covariates.csv")
 df_cov
 
 #%%
@@ -41,8 +45,7 @@ print(labels.shape)
 #%%
 
 # define the model
-model = RandomForestClassifier(n_estimators=20, 
-                               n_jobs=-1)
+model = RandomForestClassifier(n_estimators=20, n_jobs=-1)
 model
 
 #%%
@@ -90,3 +93,5 @@ with open(model_name, "wb") as f:
 # save the feature importances as csv with the name of the feature and its importance
 importances = pd.DataFrame({"feature": vocab, "importance": model.feature_importances_})
 importances.to_csv("importances.csv", index=False)
+
+# %%
