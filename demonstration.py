@@ -48,6 +48,8 @@ print(labels.shape)
 model = RandomForestClassifier(n_estimators=20, n_jobs=-1)
 model
 
+### this is a fun tutorial
+
 #%%
 
 # fit the model (time it)
