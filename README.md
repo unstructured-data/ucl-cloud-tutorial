@@ -135,9 +135,17 @@ pip install pandas scikit-learn
 
 We also need to install the *Python VSCode extension*. This extension will allow us to interactive run any Python script. Once we have this extension we can go to the *demonstration.py* script (or any Python script) and run it interactively. To do this we just need to add ```#%%``` add the start and the end of the chunk of code we want to execute. After running the first chunk of code we will be asked if we want to accept the installation of the *ipykernel* package. Accept the installation.
 
+## 5. GPU drivers
+
+For a complete guide on how to setup all the necessary software to use a GPU on a VM follow [this](./gpu_setup.md) guide.
+
 -------
 
 ## External resources
+
+### Basic GCP commands
+
+- [Here](./gcp_commands.md) is a list of some basic commands from GCP.
 
 ### Key generation and SSH 
 
