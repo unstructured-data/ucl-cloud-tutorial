@@ -95,6 +95,11 @@ sudo python3 get-pip.py
 
 ## 3. Code and data management
 
+In order to download the data files we will use in this tutorial go to the following two links:
+- [Document-term matrix](https://drive.google.com/file/d/1Ru4p2I3C-3rPBAnU3D8WGlGfBhoHAAVb/view?usp=sharing)
+- [Covariates data](https://drive.google.com/file/d/1WUVFrJWD1xpUOy9_dHEuWM3CyaMZSvLa/view?usp=drive_link)
+
+
 Files can be moved to the VM by simply dragging and dropping them in VSCode. However, for large files this might not be the best solution.
 
 ### A. Bucket creation
