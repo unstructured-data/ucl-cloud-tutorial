@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 # set path to data
 
-path_to_data = "../"
+path_to_data = "./"
 
 # read document-term matrix
 dt = pd.read_csv(path_to_data + "dt.csv")
